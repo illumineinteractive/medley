@@ -3,7 +3,7 @@ Medley is a simple, lightweight Dependency Injection Container for Python, inspi
 
 Requirements
 ------------
-Medley currently requires Python >= 2.7
+Medley requires Python >=2.7 or Python >=3.2
 
 
 Installation
