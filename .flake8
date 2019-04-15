@@ -1,0 +1,5 @@
+[flake8]
+ignore =
+    E501
+per-file-ignores =
+    medley/container.py:W503
