@@ -14,6 +14,7 @@ script:
 
 matrix:
   include:
-    - python: 3.7
+    - language: python
+      sudo: required
       dist: xenial
-      sudo: true
+      python: "3.7"
