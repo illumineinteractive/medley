@@ -441,9 +441,10 @@ class MedleyContainerTest(unittest.TestCase):
         c._keys.add.assert_called_with('tuple')
         c._values.__setitem__.assert_called_with('tuple', ('foo', 'bar'))
 
-        c.__setitem__('range', range(10))
+        r = range(10)
+        c.__setitem__('range', r)
         c._keys.add.assert_called_with('range')
-        c._values.__setitem__.assert_called_with('range', range(10))
+        c._values.__setitem__.assert_called_with('range', r)
 
         c.__setitem__('regex', r'foo')
         c._keys.add.assert_called_with('regex')
