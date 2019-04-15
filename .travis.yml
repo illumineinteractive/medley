@@ -5,10 +5,15 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-  - "3.7"
 # command to install dependencies
 install:
   - pip install -r requirements.txt
 # command to run tests
 script:
   - "python -m unittest discover"
+
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
