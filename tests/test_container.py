@@ -473,9 +473,12 @@ class MedleyContainerTest(unittest.TestCase):
         c._keys.add.assert_called_with('complex')
         c._values.__setitem__.assert_called_with('complex', complex(10))
 
-        c.__setitem__('unicode', u'unicode')
-        c._keys.add.assert_called_with('unicode')
-        c._values.__setitem__.assert_called_with('unicode', u'unicode')
+        try:
+            c.__setitem__('unicode', u'unicode')
+            c._keys.add.assert_called_with('unicode')
+            c._values.__setitem__.assert_called_with('unicode', u'unicode')
+        except SyntaxError:
+            pass
 
         c.__setitem__('bytes', b'bytes')
         c._keys.add.assert_called_with('bytes')
