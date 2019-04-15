@@ -5,6 +5,8 @@ Requirements
 ------------
 Medley requires Python >=2.7 or Python >=3.2
 
+![Medley Build](https://travis-ci.org/illumine-interactive/medley.svg?branch=master "Medley Build")
+
 
 Installation
 ------------
