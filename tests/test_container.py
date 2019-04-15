@@ -365,8 +365,8 @@ class MedleyContainerTest(unittest.TestCase):
             'baz': self.baz
         }
 
-        self.assertEqual(list(c.keys()), ['foo', 'bar', 'baz'])
-        self.assertEqual(list(c), ['foo', 'bar', 'baz'])
+        self.assertEqual(sorted(list(c.keys())), sorted(['foo', 'bar', 'baz']))
+        self.assertEqual(sorted(list(c)), sorted(['foo', 'bar', 'baz']))
 
     def test_register_calls_provider_register(self):
         c = MedleyContainer()
