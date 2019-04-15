@@ -474,10 +474,6 @@ class MedleyContainerTest(unittest.TestCase):
         c._keys.add.assert_called_with('complex')
         c._values.__setitem__.assert_called_with('complex', complex(10))
 
-        c.__setitem__('unicode', u'unicode')
-        c._keys.add.assert_called_with('unicode')
-        c._values.__setitem__.assert_called_with('unicode', u'unicode')
-
         c.__setitem__('bytes', b'bytes')
         c._keys.add.assert_called_with('bytes')
         c._values.__setitem__.assert_called_with('bytes', b'bytes')
