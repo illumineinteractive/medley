@@ -1,7 +1,7 @@
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 
 
-class ServiceProviderInterface(ABC):
+class ServiceProviderInterface(metaclass=ABCMeta):
 
     @abstractmethod
     def register(self, container):
