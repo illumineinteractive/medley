@@ -27,7 +27,6 @@ Build your container by creating a ``MedleyContainer`` instance:
 
 .. code:: python
 
-
        from medley import MedleyContainer
 
        container = MedleyContainer()
@@ -51,7 +50,6 @@ Example using **lambdas**:
 
 .. code:: python
 
-
        # define some services
        container['session_storage'] = lambda c: SessionStorage('SESSION_ID')
 
@@ -66,7 +64,6 @@ A **service decorator** is also available to wrap defined functions as a
 service
 
 .. code:: python
-
 
        @container.service('session_storage')
        def session_storage(c):
@@ -98,7 +95,6 @@ instance** of it. If you want a different instance to be returned for
 all calls, wrap your anonymous function with the ``factory()`` method
 
 .. code:: python
-
 
        container['session'] = container.factory(lambda c: Session(c['session_storage']))
 
@@ -142,7 +138,6 @@ lambdas with the ``protect()`` method to store them as parameters:
 
 .. code:: python
 
-
        from random import random
 
        container['random_func'] = container.protect(lambda: random())
@@ -169,7 +164,6 @@ extending definitions, particularly when a service needs to be modified
 and returned
 
 .. code:: python
-
 
        @container.service('session_storage')
        def session_storage(c):
