@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="medley",
-    version="1.0",
+    version="1.0.0",
     author="Garret Bolthouse",
     author_email="garret@illumineinteractive.com",
     description="A simple, lightweight Python Dependency Injection Container (IOC), inspired by Pimple",
@@ -27,6 +27,6 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Software Development :: Libraries :: Python Modules"
+        "Topic :: Software Development :: Libraries :: Python Modules"
     ],
 )
