@@ -43,7 +43,7 @@ A service is an object that does something as part of a larger system.
 Examples of services: a database connection, a templating engine, or a
 mailer. Almost any **global** object can be a service.
 
-Services are defined by **functions and lambdas** that return an
+Services are defined by **callables** (usually **lambdas**) that return an
 instance of an object:
 
 Example using **lambdas**:
@@ -144,6 +144,7 @@ callables with the ``protect()`` method to store them as parameters.
 
        # class types also need to be protected
        container['session_storage_class'] = container.protect(SessionStorage);
+
 
 Modifying Services after Definition
 -----------------------------------
