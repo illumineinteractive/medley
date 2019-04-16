@@ -5,12 +5,11 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="medley",
-    version="1.0.0",
+    version="1.0.1",
     author="Garret Bolthouse",
     author_email="garret@illumineinteractive.com",
     description="A simple, lightweight Python Dependency Injection Container (IOC), inspired by Pimple",
     long_description=long_description,
-    long_description_content_type="text/markdown",
     url="https://github.com/illumine-interactive/medley",
     packages=['medley'],
     install_requires=['six'],
