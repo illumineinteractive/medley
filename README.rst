@@ -133,14 +133,17 @@ You can now easily change the cookie name by overriding the
 Protecting Parameters
 ---------------------
 
-Because Medley sees lambdas as service definitions, you need to wrap
-lambdas with the ``protect()`` method to store them as parameters:
+Because Medley sees all callables as service definitions, you need to wrap
+callables with the ``protect()`` method to store them as parameters.
 
 .. code:: python
 
        from random import random
 
        container['random_func'] = container.protect(lambda: random())
+
+       # class types also need to be protected
+       container['session_storage_class'] = container.protect(SessionStorage);
 
 Modifying Services after Definition
 -----------------------------------
