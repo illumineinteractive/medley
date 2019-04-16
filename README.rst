@@ -121,7 +121,7 @@ from the outside and to store global values:
 
        # define some parameters
        container['cookie_name'] = 'SESSION_ID';
-       container['session_storage_class'] = 'SessionStorage';
+       container['session_storage_class'] = container.protect(SessionStorage);
 
 If you change the ``session_storage`` service definition like below:
 
@@ -156,10 +156,9 @@ code to be run on your service just after it is created:
 
 .. code:: python
 
-
        container['session_storage'] = lambda c: c['session_storage_class'](c['cookie_name'])
 
-       container.extend('session_storage' lambda storage, c: storage.some_call()
+       container.extend('session_storage', lambda storage, c: storage.some_call()
 
 The first argument of the lambda is the name of the service to extend,
 the second a function that gets access to the object instance and the
