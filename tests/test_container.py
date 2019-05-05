@@ -486,6 +486,47 @@ class MedleyContainerTest(unittest.TestCase):
         c._keys.add.assert_called_with('none')
         c._values.__setitem__.assert_called_with('none', None)
 
+    def test_getitem_allows_non_function_values(self):
+        c = MedleyContainer()
+        c._keys = set([
+            'str',
+            'dict',
+            'list',
+            'tuple',
+            'range',
+            'regex',
+            'set',
+            'frozenset',
+            'boolean',
+            'int',
+            'float',
+            'complex',
+            'bytes',
+            'bytearray',
+            'none'
+        ])
+
+        c._values = {
+            'str': 'foo',
+            'dict': {'foo': 'bar'},
+            'list': ['foo'],
+            'tuple': ('foo', ),
+            'range': range(10),
+            'regex': r'foo',
+            'set': set(),
+            'frozenset': frozenset(),
+            'boolean': False,
+            'int': int(10),
+            'float': float(10.1),
+            'complex': complex(10),
+            'bytes': b'bytes',
+            'bytearray': bytearray(b'bytes'),
+            'none': None
+        }
+
+        for key in c._keys:
+            self.assertEqual(c[key], c._values[key])
+
     def test_getitem_throws_error_if_id_does_not_exist(self):
         c = MedleyContainer()
         c._keys = Mock(__contains__=Mock(return_value=False))

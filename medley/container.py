@@ -1,6 +1,11 @@
 import re
 from .errors import FrozenServiceError, UnknownIdentifierError
 
+try:
+    from collections.abc import Hashable
+except ImportError:
+    from collections import Hashable
+
 
 class MedleyContainer(object):
 
@@ -108,7 +113,8 @@ class MedleyContainer(object):
             raise UnknownIdentifierError('Indentifier %s is not defined' % id)
 
         if (id in self._raw
-                or not isinstance(self._values[id], object)
+                or not isinstance(self._values[id], Hashable)
+                or isinstance(self._values[id], bytearray)  # Python 2.7 Fix
                 or self._values[id] in self._protected
                 or not callable(self._values[id])):
             return self._values[id]
