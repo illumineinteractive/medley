@@ -27,7 +27,7 @@ class MedleyContainer(object):
 
     def create_factory(self, id):
         def decorator(func):
-            self.factory(func)
+            self.__setitem__(id, self.factory(func))
         return decorator
 
     def extends(self, id):
