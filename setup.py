@@ -10,7 +10,7 @@ setuptools.setup(
     author_email="garret@illumineinteractive.com",
     description="A simple, lightweight Python Dependency Injection Container (IOC), inspired by Pimple",
     long_description=long_description,
-    url="https://github.com/illumine-interactive/medley",
+    url="https://github.com/illumineinteractive/medley",
     packages=['medley'],
     install_requires=['six'],
     python_requires='>=2.7',
