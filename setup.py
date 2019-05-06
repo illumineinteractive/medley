@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="medley",
-    version="1.0.3",
+    version="1.0.4",
     author="Garret Bolthouse",
     author_email="garret@illumineinteractive.com",
     description="A simple, lightweight Python Dependency Injection Container (IOC), inspired by Pimple",
