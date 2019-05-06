@@ -44,12 +44,14 @@ class MedleyContainerTest(unittest.TestCase):
 
     def test_create_factory_decorator_calls_factory(self):
         c = MedleyContainer()
-        c.factory = Mock()
+        c.__setitem__ = Mock()
+        c.factory = Mock(return_value='bar')
 
         @c.create_factory('foo')
         def foo(c):
             return 'bar'
 
+        c.__setitem__.assert_called_once_with('foo', 'bar')
         c.factory.assert_called_once()
 
     def test_create_extends_decorator_calls_extend(self):
