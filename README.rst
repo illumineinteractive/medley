@@ -6,8 +6,8 @@ Requirements
 
 Medley requires Python >=2.7 or Python >=3.2
 
-.. image:: https://travis-ci.org/illumine-interactive/medley.svg?branch=master
-    :target: https://travis-ci.org/illumine-interactive/medley
+.. image:: https://travis-ci.org/illumineinteractive/medley.svg?branch=master
+    :target: https://travis-ci.org/illumineinteractive/medley
 
 
 Installation
